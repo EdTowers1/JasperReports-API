@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="empleados" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20"
+    rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1b2c3d4-e5f6-7890-abcd-1234567890ab">
+    <parameter name="ReportTitle" class="java.lang.String" />
+    <field name="rowId" class="java.lang.Long" />
+    <field name="codcli" class="java.lang.String" />
+    <field name="nomcli" class="java.lang.String" />
+    <field name="dircli" class="java.lang.String" />
+    <field name="telcli" class="java.lang.String" />
+    <field name="email" class="java.lang.String" />
+    <field name="perjurid" class="java.lang.Boolean" />
+    <field name="cupoCre" class="java.math.BigDecimal" />
+    <field name="ultCom" class="java.time.LocalDate" />
+    <field name="nivelaut" class="java.lang.Integer" />
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="18" isBold="true" />
+                </textElement>
+                <text><![CDATA[Reporte General de Clientes]]></text>
+            </staticText>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="40" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="40" y="0" width="60" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Código]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="0" width="120" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Nombre]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="220" y="0" width="100" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Dirección]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="320" y="0" width="60" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Teléfono]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="380" y="0" width="90" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Email]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="470" y="0" width="40" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Jurídica]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="510" y="0" width="45" height="20" />
+                <textElement>
+                    <font isBold="true" />
+                </textElement>
+                <text><![CDATA[Cupo]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="40" height="20" />
+                <textFieldExpression><![CDATA[$F{rowId}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="40" y="0" width="60" height="20" />
+                <textFieldExpression><![CDATA[$F{codcli}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="100" y="0" width="120" height="20" />
+                <textFieldExpression><![CDATA[$F{nomcli}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="220" y="0" width="100" height="20" />
+                <textFieldExpression><![CDATA[$F{dircli}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="320" y="0" width="60" height="20" />
+                <textFieldExpression><![CDATA[$F{telcli}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="0" width="90" height="20" />
+                <textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="470" y="0" width="40" height="20" />
+                <textFieldExpression><![CDATA[$F{perjurid} ? "Sí" : "No"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="510" y="0" width="45" height="20" />
+                <textFieldExpression><![CDATA[$F{cupoCre}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
