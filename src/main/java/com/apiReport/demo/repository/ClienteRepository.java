@@ -1,11 +1,17 @@
 package com.apiReport.demo.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import com.apiReport.demo.model.Cliente;
+// CLASE DESHABILITADA: Esta API no usa conexión directa a base de datos
+// Si necesitas habilitar BD en el futuro, descomenta este código y agrega
+// spring-boot-starter-data-jpa
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-    // Métodos de solo lectura ya incluidos por JpaRepository:
-    // List<Cliente> findAll();
-    // Optional<Cliente> findById(Long id);
-
-}
+/*
+ * import org.springframework.data.jpa.repository.JpaRepository;
+ * import com.apiReport.demo.model.Cliente;
+ * 
+ * public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+ * // Métodos de solo lectura ya incluidos por JpaRepository:
+ * // List<Cliente> findAll();
+ * // Optional<Cliente> findById(Long id);
+ * 
+ * }
+ */

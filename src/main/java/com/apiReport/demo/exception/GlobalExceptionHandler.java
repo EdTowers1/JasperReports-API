@@ -19,15 +19,15 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ReportException.class)
     public ResponseEntity<ReportResponse> handleReportException(ReportException ex) {
         logger.error("Error al generar reporte: {}", ex.getMessage(), ex);
-        ReportResponse response = new ReportResponse("ERROR", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ReportResponse("ERROR", ex.getMessage()));
     }
 
     @ExceptionHandler(ReportNotFoundException.class)
     public ResponseEntity<ReportResponse> handleReportNotFoundException(ReportNotFoundException ex) {
         logger.warn("Recurso no encontrado: {}", ex.getMessage());
-        ReportResponse response = new ReportResponse("NOT_FOUND", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ReportResponse("NOT_FOUND", ex.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -42,7 +42,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ReportResponse> handleGenericException(Exception ex) {
         logger.error("Error interno del servidor: {}", ex.getMessage(), ex);
-        ReportResponse response = new ReportResponse("ERROR", "Error interno del servidor");
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ReportResponse("ERROR", "Error interno del servidor"));
     }
 }
