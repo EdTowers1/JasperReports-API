@@ -24,7 +24,7 @@ public class HealthController {
 		response.put("status", "UP");
 		response.put("message", "API funcionando correctamente");
 		response.put("timestamp", LocalDateTime.now());
-		response.put("features", new String[] { "QR Code Generation", "Reports (disabled - no DB)" });
+		response.put("features", new String[] { "QR Code Generation" });
 		return ResponseEntity.ok(response);
 	}
 
